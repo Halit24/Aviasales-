@@ -1,10 +1,11 @@
 package com.aviasales.demo.service;
 
+import com.aviasales.demo.annotation.Loggable;
 import com.aviasales.demo.entity.Opersales;
+import org.aspectj.lang.annotation.Aspect;
 
 import java.util.HashMap;
-
-public class Aviasales {
+public class Aviasales  {
     protected HashMap<String, Opersales> opersalesMap;
 
 
@@ -25,6 +26,7 @@ public class Aviasales {
     }
 
 
+
     public void removeByOper(String name) {
         if (opersalesMap.containsKey(name)) {
             opersalesMap.remove(name);
@@ -42,14 +44,14 @@ public class Aviasales {
         }
     }
 
-
+    @Loggable
     public void bayTickets(String name) {
         if (name != null && opersalesMap.containsKey(name)) {
             Opersales editOpersales = opersalesMap.get(name);
             if (editOpersales.getPlace() > 0) {
                 editOpersales.setPlace(editOpersales.getPlace() - 1);
                 opersalesMap.put(name, editOpersales);
-                System.out.println("Билет на оперу " + name + " успешно приобретен");
+                System.out.println("Покупка билета на оперу " + name );
             } else {
                 System.out.println("Билетов больше нет");
             }

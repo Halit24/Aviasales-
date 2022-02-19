@@ -18,20 +18,21 @@ public class DemoApplication {
 		bean.addNewOper(new Opersales("Евгений Онегин", "Роман", "0", 15));
 
 		//Вывод всех опер или по одной
-		bean.printAllOpersales();
-		bean.viewOpera("Евгений Онегин");
+		//bean.printAllOpersales();
+		//bean.viewOpera("Евгений Онегин");
 
 		// изменение информации
-		bean.changeInfo(bean.getConcert("Евгений Онегин"), "name", "Евгений Аньтипов");
-		bean.printAllOpersales();
+		//bean.changeInfo(bean.getConcert("Евгений Онегин"), "name", "Евгений Аньтипов");
+		//bean.printAllOpersales();
 
 		//покупка и возврат билета
+		//Внедрение АОП и оповещение после покупки билета
 		bean.bayTickets("Норма");
-		bean.ticketRefund("Норма");
+		//bean.ticketRefund("Норма");
 
 		//удаление оперы
-		bean.removeByOper("Норма");
-		bean.printAllOpersales();
+		//bean.removeByOper("Норма");
+		//bean.printAllOpersales();
 	}
 
 }
